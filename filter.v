@@ -21,7 +21,7 @@
 module filter(
     input clk,
     input rst,
-    input [17:0] inSignal,
+    input [17:0] inSignalUnReg,
 	 input newData,
     output reg [17:0] outSignal,
 	 output reg dataReady
@@ -33,6 +33,7 @@ reg state[2:0];
 reg index [5:0];
 reg [17:0] fifo [0:10];
 integer i;
+reg [17:0] inSignal;
 
 wire [17:0] mult1A, mult1B, mult1P;
 wire [35:0] mult1Ptemp;
@@ -98,7 +99,7 @@ fpMultiply mult4 (
 fpMultiply mult5 (
 	  .a(mult5A), 
 	  .b(mult5B), 
-	  .p(mult51Ptemp)
+	  .p(mult5Ptemp)
 	);
 
 fpMultiply mult6 (
@@ -106,8 +107,6 @@ fpMultiply mult6 (
 	  .b(mult6B), 
 	  .p(mult6Ptemp)
 	);
-
-assign mult1B = 18'h00800; //should be 0.5
 
 always @(posedge clk)
 begin
@@ -117,8 +116,11 @@ begin
 		outSignal <= 0;
 		dataA <= 0;
 		dataB <= 0;
+		inSignal <= 0;
 		fifo[0] <= 0;
 		fifo[1] <= 0;
+		for (i = 0; i < 11; i = i + 1)
+			fifo[i] <=0;
 	end
 	else
 	begin
@@ -126,7 +128,7 @@ begin
 		
 		if (newData)
 		begin
-		
+			inSignal <= inSignalUnReg;
 			for (i = 1; i < 12; i = i + 1) begin
 				fifo[i] <= fifo[i - 1];
 			end
