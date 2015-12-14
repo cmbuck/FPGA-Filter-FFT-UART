@@ -1,6 +1,0 @@
-verilog work "ipcore_dir/output_mem.v"
-verilog work "ipcore_dir/multiplier.v"
-verilog work "ipcore_dir/memory.v"
-verilog work "ipcore_dir/input_mem.v"
-verilog work "ipcore_dir/floating_point_add.v"
-verilog work "top.v"
