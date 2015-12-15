@@ -45,6 +45,7 @@ module tb_filter_float;
 	);
 	
 	reg [31:0] bank [0:10];
+	integer i;
 
 	initial begin
 		// Initialize Inputs
@@ -53,14 +54,33 @@ module tb_filter_float;
 		inSignalUnReg = 0;
 		newData = 0;
 		//bank assignment
+		bank[0] = 32'hbf83c6e0;
+		bank[1] = 32'h4141669e;
+		bank[2] = 32'h40039b58;
+		bank[3] = 32'h40b32045;
+		bank[4] = 32'h412a09e2;
+		bank[5] = 32'h40ec34b1;
+		bank[6] = 32'h414545ad;
+		bank[7] = 32'h417fdf8a;
+		bank[8] = 32'hbedc3a8c;
+		bank[9] = 32'h3f2d6547;
+
+
 
 		// Wait 100 ns for global reset to finish
 		#100;
       rst = 0;
 		
 		// Add stimulus here
-		newData = 1;
-		#1000;
+		for (i = 0; i < 10; i = i + 1)
+		begin
+			inSignalUnReg = bank[i];
+			#50
+			newData = 1;
+			#50;
+			newData = 0;
+			#900;
+		end
 		
 		$finish;
 	end
