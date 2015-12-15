@@ -21,9 +21,9 @@
 module filter_float(
     input clk,
     input rst,
-    input [32:0] inSignalUnReg,
+    input [31:0] inSignalUnReg,
 	 input newData,
-    output reg [32:0] outSignal,
+    output reg [31:0] outSignal,
 	 output reg dataReady
     );
 

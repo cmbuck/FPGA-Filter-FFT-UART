@@ -27,11 +27,11 @@ module tb_filter_float;
 	// Inputs
 	reg clk;
 	reg rst;
-	reg [32:0] inSignalUnReg;
+	reg [31:0] inSignalUnReg;
 	reg newData;
 
 	// Outputs
-	wire [32:0] outSignal;
+	wire [31:0] outSignal;
 	wire dataReady;
 
 	// Instantiate the Unit Under Test (UUT)
