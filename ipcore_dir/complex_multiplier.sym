@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="complex_multiplier">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-12-16T21:54:44</timestamp>
+    <pin polarity="Input" x="0" y="80" name="ar[17:0]" />
+    <pin polarity="Input" x="0" y="144" name="ai[17:0]" />
+    <pin polarity="Input" x="0" y="208" name="br[17:0]" />
+    <pin polarity="Input" x="0" y="272" name="bi[17:0]" />
+    <pin polarity="Output" x="576" y="80" name="pr[35:0]" />
+    <pin polarity="Output" x="576" y="144" name="pi[35:0]" />
+    <graph>
+        <text style="fontsize:40;fontname:Arial" x="32" y="32">complex_multiplier</text>
+        <rect width="512" x="32" y="32" height="608" />
+        <line x2="32" y1="80" y2="80" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="80" type="pin ar[17:0]" />
+        <line x2="32" y1="144" y2="144" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="144" type="pin ai[17:0]" />
+        <line x2="32" y1="208" y2="208" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="208" type="pin br[17:0]" />
+        <line x2="32" y1="272" y2="272" style="linewidth:W" x1="0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="36" y="272" type="pin bi[17:0]" />
+        <line x2="544" y1="80" y2="80" style="linewidth:W" x1="576" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="540" y="80" type="pin pr[35:0]" />
+        <line x2="544" y1="144" y2="144" style="linewidth:W" x1="576" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="540" y="144" type="pin pi[35:0]" />
+    </graph>
+</symbol>
