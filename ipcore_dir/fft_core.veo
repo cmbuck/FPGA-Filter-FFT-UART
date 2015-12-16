@@ -203,12 +203,10 @@ fft_core your_instance_name (
   .clk(clk), // input clk
   .sclr(sclr), // input sclr
   .start(start), // input start
-  .xn_re(xn_re), // input [17 : 0] xn_re
-  .xn_im(xn_im), // input [17 : 0] xn_im
+  .xn_re(xn_re), // input [31 : 0] xn_re
+  .xn_im(xn_im), // input [31 : 0] xn_im
   .fwd_inv(fwd_inv), // input fwd_inv
   .fwd_inv_we(fwd_inv_we), // input fwd_inv_we
-  .scale_sch(scale_sch), // input [11 : 0] scale_sch
-  .scale_sch_we(scale_sch_we), // input scale_sch_we
   .rfd(rfd), // output rfd
   .xn_index(xn_index), // output [5 : 0] xn_index
   .busy(busy), // output busy
@@ -216,8 +214,8 @@ fft_core your_instance_name (
   .done(done), // output done
   .dv(dv), // output dv
   .xk_index(xk_index), // output [5 : 0] xk_index
-  .xk_re(xk_re), // output [17 : 0] xk_re
-  .xk_im(xk_im) // output [17 : 0] xk_im
+  .xk_re(xk_re), // output [31 : 0] xk_re
+  .xk_im(xk_im) // output [31 : 0] xk_im
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
